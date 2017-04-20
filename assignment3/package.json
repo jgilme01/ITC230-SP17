@@ -1,0 +1,17 @@
+{
+  "name": "itc230advjs",
+  "version": "1.0.0",
+  "description": "ITC 230 ADV JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "JSGilmer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
