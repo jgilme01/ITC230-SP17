@@ -1,58 +1,60 @@
-var http = require("http"), fs = require("fs"), qs = require("querystring"); var pizza = require("./pizza.js");
+'use strict'
 
-//import get from 'pizza';//imports default query function from pizza object
+let pizza = require("./pizza.js");
+const express = require('express');
+const app = express();
+let handlebars = require("express-handlebars");  
+app.engine('.html', handlebars({extname: '.html'})); 
+app.set('view engine', '.html');
+app.set('port', process.env.PORT || 3000);
+app.use(express.static(__dirname + '/public')); // allows direct navigation to static files
+app.use(require('body-parser').urlencoded({extended: true}));
 
-function serveFile(res, path, contentType, responseCode) {
-    if(!responseCode) responseCode = 200;
-    fs.readFile(__dirname + path, function(err, data) {
-        if(err) {
-            res.writeHead(500, {'Content-Type': 'text/plain' });
-            res.end('500: Internal Error');
-        }else {
-            res.writeHead(responseCode, { 'Content-Type': contentType });
-            res.end(data);
-        }
+app.get('/', function(req, res){
+        res.type('text/html');
+        res.sendFile(__dirname + '/public/home.html');
+    });
+
+//app.get or app.post
+//everything after route is superfluous
+app.get('/about', function(req, res){
+        res.type('text/plain');
+        res.send('About page');
+    });
+
+app.post('/get', function(req, res){
+    console.log(req.body);    
+        //res.type('text/plain');
+        
+        //imports get function from pizza object
+        var got = pizza.get(req.body.name); //pass name object from query to pizza object as name
+        let resultsGet = (got) ?JSON.stringify(got) : "Nothing returned"; //convert to string object, if returned, if not, signal nothing returned
+        res.render('found', {query: req.body.name, result: resultsGet});
         
     });
-}
 
-http.createServer(function(req,res) {
-    
-    //console.log("url =" + req.url)
-    //console.log("dir =" + __dirname)
-    var url = req.url.split("?");//to split query on ? for search
-    var query = qs.parse(url[1]);//to separate remainder of into objects
-    var path = url[0].toLowerCase();
-    console.log(query);
-    
-    switch(path) {
-        case '/':
-            serveFile(res, '/public/home.html', 'text/html');
-        
-       /* fs.readFile(__dirname + '/public/home.html', function read(err, data){
-            if (err) {throw err;}
-            res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end(data);})
-            res.writeHead(200, {'Content_Type':'text/plain'});
-            res.end(__dirname + '/public/home.html')*/
-        
-    
-        //res.end('Home page')
-        break;
-        case '/about':
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end('About page')
-        break;
-        case '/get':
-        //import get from 'pizza';//imports default query function from pizza object
-        var results = pizza.get(query.name); //pass name object from query to pizza object as name
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end('For a search, enter "?" + search category + "=" + query. "?name=neopolitan"')
-        res.end(JSON.stringify(results));
-        break;
-        default:
-        res.writeHead(404, {'Content-Type': 'text/plain'});
-        console.log(404);
-        res.end('Not Found');
-    }
-}).listen(process.env.PORT || 3000);
+app.get('/delete', function(req, res){
+        res.type('text/plain');
+        res.send('To delete, enter "?" + delete category + "=" + query. Example: "?name=neopolitan"\n');
+        var deleted = pizza.delete(query.name);//call to pizza object, delete function with same query path
+        //let resultsDel = (deleted) ? JSON.stringify(deleted) : "Doesn't exist, can't delete";
+        res.send('Deleted: ' + query.name + '\n' + JSON.stringify(deleted));
+    });
+
+app.use(function(req, res, next){                     
+        res.type('text/plain');                       
+        res.status(404);        
+        res.send('404 - Not Found'); 
+    });
+
+// custom 500 page 
+app.use(function(err, req, res, next){              
+        console.error(err.stack);                    
+        res.type('text/plain');                      
+        res.status(500);        
+        res.send('500 - Server Error'); 
+    });
+
+app.listen(app.get('port'), function(){              
+        console.log( 'Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.' ); 
+    });

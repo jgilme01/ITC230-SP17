@@ -1,7 +1,5 @@
 'use strict'
 
-//const expose = require("expose-js");
-
 let pizzas = [
     {name: "margherita", cheese: "mozzarella", base: "marinara"},
     {name: "Greek", cheese: "feta", base: "pesto"},
@@ -10,16 +8,20 @@ let pizzas = [
     {name: "neopolitan", cheese: "mozzarella de buffuo", base: "olive oil"},
     ];
 
-var searched = [];
-
-exports.get = (name, item, array) => {
-    pizzas.forEach(function(item, array) {
-        if (item.name == name) {
-            searched.push(item);
-        }});
-   
-    
-    console.log(searched);
+exports.get = (name) => {
+    return pizzas.find((item) => {
+        return item.name == name;
+    });
 }
- 
-//export get;
+
+//delete function, using filter array higher order method
+exports.delete = (name) => {
+        let oldLength = pizzas.length;
+        var newPizzas = pizzas.filter((item) => {
+            return item.name !== name;
+        });
+        pizzas = newPizzas; 
+        //returns JSON, to be converted to string
+        return { deleted: pizzas.length !== oldLength, total: pizzas.length };   
+    };
+
