@@ -15,42 +15,34 @@ app.get('/', function(req, res){
         res.sendFile(__dirname + '/public/home.html');
     });
 
-//app.get or app.post
-//everything after route is superfluous
 app.get('/about', function(req, res){
         res.type('text/plain');
         res.send('About page');
     });
 
 app.post('/get', function(req, res){
-    console.log(req.body);    
-        //res.type('text/plain');
-        
-        //imports get function from pizza object
+    console.log(req.body);
         var got = pizza.get(req.body.name); //pass name object from query to pizza object as name
-        let resultsGet = (got) ?JSON.stringify(got) : "Nothing returned"; //convert to string object, if returned, if not, signal nothing returned
-        res.render('found', {query: req.body.name, result: resultsGet});
+        res.render('found', {query: req.body.name, result: got});
         
     });
 
-app.get('/delete', function(req, res){
-        res.type('text/plain');
-        res.send('To delete, enter "?" + delete category + "=" + query. Example: "?name=neopolitan"\n');
-        var deleted = pizza.delete(query.name);//call to pizza object, delete function with same query path
-        //let resultsDel = (deleted) ? JSON.stringify(deleted) : "Doesn't exist, can't delete";
-        res.send('Deleted: ' + query.name + '\n' + JSON.stringify(deleted));
+app.post('/delete', function(req, res){
+        var deleted = pizza.delete(req.body.name);//call to pizza object
+        res.render('deleted', {delete: req.body.name, result: deleted});
+    console.log(deleted);
     });
 
-app.use(function(req, res, next){                     
-        res.type('text/plain');                       
+app.use(function(req, res, next){              
+        res.type('text/plain');                
         res.status(404);        
         res.send('404 - Not Found'); 
     });
 
 // custom 500 page 
-app.use(function(err, req, res, next){              
-        console.error(err.stack);                    
-        res.type('text/plain');                      
+app.use(function(err, req, res, next){        
+        console.error(err.stack);            
+        res.type('text/plain');             
         res.status(500);        
         res.send('500 - Server Error'); 
     });

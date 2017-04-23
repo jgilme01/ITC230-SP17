@@ -2,8 +2,8 @@
 
 let pizzas = [
     {name: "margherita", cheese: "mozzarella", base: "marinara"},
-    {name: "Greek", cheese: "feta", base: "pesto"},
-    {name: "California", cheese: "ricotta", base: "olive oil"},
+    {name: "greek", cheese: "feta", base: "pesto"},
+    {name: "california", cheese: "ricotta", base: "olive oil"},
     {name: "neopolitan", cheese: "mozzarella", base: "marinara"},
     {name: "neopolitan", cheese: "mozzarella de buffuo", base: "olive oil"},
     ];
