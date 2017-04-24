@@ -20,6 +20,11 @@ app.get('/about', function(req, res){
         res.send('About page');
     });
 
+app.get('/contact', function(req, res) {             
+        res.render('contact');
+    })
+
+
 app.post('/get', function(req, res){
     console.log(req.body);
         var got = pizza.get(req.body.name); //pass name object from query to pizza object as name
