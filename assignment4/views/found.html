@@ -1,0 +1,26 @@
+<!--begin before title-->
+<title>Search result</title>
+</head>
+
+<body>
+    
+    
+  <h3>Results for {{{query}}}:</h3>
+    {{#if result}}
+    
+    <p>Pizza: {{{result.name}}}</p>
+    <p>Cheese: {{{result.cheese}}}</p>
+    <p>Base: {{{result.base}}}</p>
+    
+    <p>Delete {{{query}}} ?</p>
+    
+    <form action="/delete" method="post">
+    <button name="name" type="delete" value="{{result.name}}">Delete</button>
+    </form>
+    
+    {{else}}
+    <p>Not found</p>
+    
+    {{/if}}
+
+    <!--End before /body-->
