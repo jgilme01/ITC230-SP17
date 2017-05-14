@@ -31,13 +31,15 @@ input[type=text]:focus {
 }
 
 header, footer {
-    padding: .5em;
     color:white;
     clear: left;
     text-align: center;
 	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
-	background-position: 0 100%;
+	background-position: 0 98.5%;
 	background-size: cover;
+	width:100%;
+	position:absolute;
+	bottom:0;
 }
 
 nav ul {
@@ -70,7 +72,11 @@ nav li a:hover:not(.active) {
 #demo {
 	color: white;
 	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
-	background-position: 0 100%;
+	background-position: 0 95%;
 	background-size: cover;
+	clear:both;
+	position: absolute;
+	width:100%;
+	bottom:5%;
 	
 }
