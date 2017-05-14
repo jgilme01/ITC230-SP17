@@ -3,8 +3,11 @@ body, html {height: 100%}
 .bgimg {
     background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
     min-height: 100%;
-    background-position: 0 5%;
-    background-size: cover;
+	/*width:100%*/
+	background-position: 0 25%;
+    background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
 }
 
 input[type=text] {
@@ -20,6 +23,7 @@ input[type=text] {
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+	
 }
 
 input[type=text]:focus {
@@ -32,7 +36,8 @@ header, footer {
     clear: left;
     text-align: center;
 	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
-	background-position: center bottom;
+	background-position: 0 100%;
+	background-size: cover;
 }
 
 nav ul {
@@ -41,7 +46,8 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
-	background-position: top center;
+	background-position: 2% 0;
+	background-size: cover;
 }
 
 nav li {
@@ -64,5 +70,7 @@ nav li a:hover:not(.active) {
 #demo {
 	color: white;
 	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
-	background-position: center bottom;
+	background-position: 0 100%;
+	background-size: cover;
+	
 }

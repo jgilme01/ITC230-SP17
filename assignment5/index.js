@@ -16,7 +16,6 @@ app.use(require('body-parser').urlencoded({extended: true}));
 
 app.get('/', function(req, res){
         var list = pizza.list();
-		console.log(list);
         res.render('home', {title: 'home', pizzas:list});
     });
 
@@ -46,7 +45,6 @@ app.get('/get', function(req, res) {
 app.post('/delete', function(req, res){
         var deleted = pizza.delete(req.body.name);//call to pizza object
         res.render('deleted', {delete: req.body.name, result: deleted});
-    console.log(deleted);
     });
 
 app.use(function(req, res, next){              

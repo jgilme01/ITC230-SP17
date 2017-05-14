@@ -5,7 +5,7 @@ let pizzas = [
     {name: "greek", cheese: "feta", base: "pesto"},
     {name: "california", cheese: "ricotta", base: "olive oil"},
     {name: "neopolitan", cheese: "mozzarella", base: "marinara"},
-    {name: "neopolitan", cheese: "mozzarella de buffuo", base: "olive oil"},
+    {name: "hawaiian", cheese: "cheddar", base: "acidic"},
     ];
 
 exports.list = () => {
