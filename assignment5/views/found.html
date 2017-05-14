@@ -1,0 +1,24 @@
+<!--begin before title-->
+
+    
+<div class="w3-display-middle">
+  <h3>Details for {{{query}}}:</h3>
+    {{#if result}}
+    
+    <p>Pizza: {{{result.name}}}</p>
+    <p>Cheese: {{{result.cheese}}}</p>
+    <p>Base: {{{result.base}}}</p>
+    
+    <p>Delete {{{query}}} ?</p>
+    
+    <form action="/delete" method="post">
+    <button name="name" type="delete" value="{{result.name}}">Delete</button>
+    </form>
+    
+    {{else}}
+    <p>Not found</p>
+    
+    {{/if}}
+</div>
+
+    <!--End before /body-->

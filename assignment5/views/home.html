@@ -1,0 +1,16 @@
+  <div class="w3-display-middle">
+      {{#if pizzas}}
+	  <ul>
+	  {{#each pizzas}}
+		 <li><a href="/get?name={{this.name}}" name=
+				"{{this.name}}">{{this.name}}</a></li>
+		  {{/each}}
+	  </ul>
+	  {{else}}
+	  <p>No pizzas here</p>
+	  {{/if}}
+      </div>
+      <!--form for search-->
+    <form method ="post" action="/get">
+  <input type="text" name="name" placeholder="Search for pizza">
+</form>
