@@ -1,0 +1,8 @@
+{name: "margherita", cheese: "mozzarella", base: "marinara"}
+{name: "greek", cheese: "feta", base: "pesto"}
+{name: "california", cheese: "ricotta", base: "olive oil"}
+{name: "neopolitan", cheese: "mozzarella", base: "marinara"}
+{name: "hawaiian", cheese: "cheddar", base: "acidic"}
+	
+//cd C:\Program Files\MongoDB\Server\3.4\bin
+//mongoimport -h ds137271.mlab.com:37271 -d jgilmongo -c pizzas -u jgilme01 -p Database1! --file C:\Users\JSG\Desktop\School\Current\ITC230\Pizza.JSON

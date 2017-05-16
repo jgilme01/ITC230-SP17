@@ -1,0 +1,82 @@
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+    min-height: 100%;
+	/*width:100%*/
+	background-position: 0 25%;
+    background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+
+input[type=text] {
+    width: 120px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+header, footer {
+    color:white;
+    clear: left;
+    text-align: center;
+	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+	background-position: 0 98.5%;
+	background-size: cover;
+	width:100%;
+	position:absolute;
+	bottom:0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+	background-position: 2% 0;
+	background-size: cover;
+}
+
+nav li {
+    float: left;
+	font-size: 1em;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+#demo {
+	color: white;
+	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+	background-position: 0 95%;
+	background-size: cover;
+	clear:both;
+	position: absolute;
+	width:100%;
+	bottom:5%;
+	
+}

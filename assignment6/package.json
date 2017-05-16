@@ -1,0 +1,30 @@
+{
+  "name": "itc230advjs",
+  "email": "jgilme01@seattlecentral.edu",
+  "url": "http://www.dohmang.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgilme01/ITC230-SP17"
+  },
+  "version": "1.0.0",
+  "description": "ITC 230 ADV JS",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "test": "mocha test/test.js"
+  },
+  "keywords": "javascript",
+  "author": "JGilme",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.9.9"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.3.0"
+  }
+}
