@@ -10,13 +10,14 @@
   "description": "ITC 230 ADV JS",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint index.js",
+    "lint": "eslint **/*.js",
     "test": "mocha test/test.js"
   },
   "keywords": "javascript",
   "author": "JGilme",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.4.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",

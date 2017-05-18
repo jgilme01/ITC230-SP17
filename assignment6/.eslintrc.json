@@ -1,6 +1,7 @@
 {
     "env": {
-        "browser": true
+        "browser": true,
+		"amd": true
     },
     
     "extends": "eslint:recommended",
@@ -20,7 +21,7 @@
         ],
         "quotes": [
             "error",
-            "single"
+            "double"
         ],
         "semi": [
             "error",

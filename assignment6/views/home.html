@@ -8,6 +8,9 @@
 	  </ul>
 	  {{else}}
 	  <p>No pizzas in database</p>
+	  <form action="/reload" method="post">
+		  <button name="name" type="reloadDB" value="">Reload</button>
+		</form>
 	  {{/if}}
       </div>
       <!--form for search-->
