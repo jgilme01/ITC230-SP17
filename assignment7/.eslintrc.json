@@ -1,0 +1,41 @@
+{
+    "env": {
+        "browser": true,
+		"amd": true
+    },
+    
+    "extends": "eslint:recommended",
+	
+    "parserOptions": {
+	    "ecmaVersion": 6
+    },
+    
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        
+        "prefer-arrow-callback": [
+            "warn"
+        ],
+        
+        "no-var": [
+            "warn"
+        ],
+	    
+	   "no-console":0
+    }
+}
