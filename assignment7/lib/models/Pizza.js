@@ -1,7 +1,7 @@
 "use strict";
 
 let mongoose = require("mongoose");
-let credentials = require("../password.js");
+let credentials = require("../credentials.js");
 
 // remote db connection settings. For security, connectionString should be in a separate file not committed to git
 //console.log(credentials.user(), credentials.password());
