@@ -3,5 +3,5 @@ node_modules
 credentials.js
 password.js
 classnotes/*
-test.js
-testAPI.js
+/*test.js
+testAPI.js*/
