@@ -1,0 +1,107 @@
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+    min-height: 100%;
+	/*width:100%*/
+	background-position: 0 25%;
+    background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+	border: transparent;
+    border-radius: 4px;
+    font-size: 1em;;
+    background-color: transparent;
+    background-position: center;
+	text-align: center;
+    background-repeat: no-repeat;
+    padding: .25em;
+	color: white;
+	
+}
+
+header, footer {
+    color:white;
+    clear: left;
+    text-align: center;
+	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+	background-position: 0 98.5%;
+	background-size: cover;
+	width:100%;
+	position:absolute;
+	bottom:0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+	background-position: 2% 0;
+	background-size: cover;
+}
+
+nav li {
+    float: left;
+	font-size: 1em;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+#demo {
+	color: white;
+	background-image: url('http://w3schools.com/w3images/forestbridge.jpg');
+	background-position: 0 95%;
+	background-size: cover;
+	clear:both;
+	position: absolute;
+	width:100%;
+	bottom:5%;
+	
+}
+
+#app {
+	margin: auto;
+    width: 95%;
+    /*border: 3px solid green;*/
+    padding: 10px;
+	text-align: center;
+}
+
+ul {
+	list-style:none;
+	text-align: center;
+	position:relative;
+  	display: inline-block;  
+  	width:100%;
+  	margin: auto;
+  	padding: 0;
+}
+
+
+#root {
+	clear:both;
+	/*border:3px solid blue;*/
+}
+
+button {
+	background-color: transparent;
+	border: transparent;
+	color: white;
+}
